@@ -1,0 +1,11 @@
+---
+applications:
+  - name: cf-hello-app
+    memory: 256M
+    path: target/$ARTIFACT_NAME
+    instances: 1
+    buildpacks:
+      - sap_java_buildpack
+    routes:
+      - route: https://hello-app.cfapps.us10-001.hana.ondemand.com/hello
+        protocol: http2
